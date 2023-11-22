@@ -79,7 +79,7 @@ export class PostEditComponent {
           const description = this.form.value.description;
         
           const post: Post = new Post(
-            title, imgPath, description, '', new Date(), 0
+            title, imgPath, description, '', new Date(), 0, 
           );
         
           if (this.editMode){
