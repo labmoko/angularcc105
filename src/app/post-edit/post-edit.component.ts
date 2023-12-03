@@ -24,6 +24,7 @@ export class PostEditComponent {
          let editTitle = "";
          let editDescription = "";
          let editImgPath = "";
+         let editVideoUrl = "";
 
           this.actRoute.params.subscribe((params: Params) => {
             if(params ['index']){
@@ -34,6 +35,7 @@ export class PostEditComponent {
 
               editTitle = post.title;
               editImgPath = post.imgPath;
+               editVideoUrl = post.videoUrl; // add this line
               editDescription = post.description;
 
               this.editMode= true;
@@ -44,6 +46,7 @@ export class PostEditComponent {
           this.form = new FormGroup({
             title: new FormControl(editTitle, [Validators.required]),
             imgPath: new FormControl(editImgPath, [Validators.required]),
+            videoUrl: new FormControl(editVideoUrl, [Validators.required]),
             description: new FormControl(editDescription, [Validators.required])
           })
         }
@@ -79,7 +82,7 @@ export class PostEditComponent {
           const description = this.form.value.description;
         
           const post: Post = new Post(
-            title, imgPath, description, '', new Date(), 0, 
+            title, imgPath,'', description, '', new Date(), 0, 0 
           );
         
           if (this.editMode){
