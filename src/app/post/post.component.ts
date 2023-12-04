@@ -30,7 +30,9 @@ onEdit(){
 onClick(){
   this.postService.likePost(this.index);
 }
-
+onDislike(){
+  this.postService.dislikePost(this.index);
+}
 addComment(commentText: string ){
   if(commentText.trim() !== ''){
     this.postService.addComment(this.index, commentText);

@@ -31,6 +31,9 @@ export class PostService{
       likePost(index:number){
         this.listsOfPosts[index].numberOfLikes+= 1;
       }
+      dislikePost(index: number) {
+        this.listsOfPosts[index].numberOfDislikes++;
+      }
       addComment(index : number, comment:string){
         this.listsOfPosts[index].comment.push(comment);
       }
