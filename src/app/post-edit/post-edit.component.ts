@@ -46,7 +46,7 @@ export class PostEditComponent {
           this.form = new FormGroup({
             title: new FormControl(editTitle, [Validators.required]),
             imgPath: new FormControl(editImgPath, [Validators.required]),
-            videoUrl: new FormControl(editVideoUrl, [Validators.required]),
+            videoUrl: new FormControl(editVideoUrl),
             description: new FormControl(editDescription, [Validators.required])
           })
         }
@@ -76,6 +76,10 @@ export class PostEditComponent {
 
           this.route.navigate(['post-list']);
         }*/
+        //search 12/5
+        searchPosts(query: string) {
+          this.postService.searchPosts(query);
+        }
         onSubmit(){
           const title = this.form.value.title;
           const imgPath = this.form.value.imgPath;
