@@ -41,10 +41,5 @@ export class PostService{
         this.listsOfPosts = listsOfPosts;
         this.listChangeEvent.emit(listsOfPosts);
       }
-        // ... for seacrh 12/5 ...
-
-        searchPosts(query: string) {
-          const filteredPosts = this.listsOfPosts.filter(post => post.title.includes(query));
-          this.listChangeEvent.emit(filteredPosts);
-        }
+      
 }

@@ -10,12 +10,21 @@ import { PostEditComponent } from './post-edit/post-edit.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
+import { AuthGuard } from './auth.guard';
+import { AuthService } from './signup/auth.service';
 
 const routes: Routes = [
   {path: 'post-list', component: PostListComponent},
   {path: 'post-add', component: PostEditComponent},
   {path: 'authentication', component: AuthComponent},
   {path: 'post-edit/:index', component: PostEditComponent},
+  { path: 'signin', component: SigninComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'post-list', component: PostListComponent, canActivate: [AuthGuard] }
+ 
+
   
 ]
 
@@ -26,7 +35,9 @@ const routes: Routes = [
     HeaderComponent,
     PostComponent,
     PostEditComponent,
-    PostListComponent
+    PostListComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +46,9 @@ const routes: Routes = [
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  exports: [RouterModule],
+  providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export class YourModule { }

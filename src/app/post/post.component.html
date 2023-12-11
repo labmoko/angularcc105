@@ -1,12 +1,13 @@
-
+<body>
+    <div class = "container post-container">
 <h3> {{post?.title}}</h3>
 <a href="{{post?.imgPath}}" download>
-<img class="img-responsive" src ="{{post?.imgPath}}" width="1000px" height="600px">
+<img class="img-responsive" src ="{{post?.imgPath}}" width="400px" height="200px">
 </a>
-<video width="320" height="240" controls>
+<!--<video width="320" height="240" controls>
     <source [src]="post?.videoUrl" type="video/mp4">
     Your browser does not support the video tag.
-  </video>
+  </video>-->
 <p>
     {{post?.description}}
 </p>
@@ -39,3 +40,5 @@
  <div *ngFor="let comment of post?.comment">
     <p>{{comment}}</p>
  </div>
+</div>
+</body>
