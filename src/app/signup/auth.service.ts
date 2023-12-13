@@ -15,7 +15,7 @@ export class AuthService {
 
     // Set isAuthenticatedFlag to true upon successful authentication
     this.isAuthenticatedFlag = true;
-    return true;
+    return this.isAuthenticatedFlag;
   }
 
   async signUp(email: string, password: string): Promise<boolean> {
@@ -27,7 +27,7 @@ export class AuthService {
 
       // Set isAuthenticatedFlag to true upon successful registration
       this.isAuthenticatedFlag = true;
-      return true;
+      return this.isAuthenticatedFlag;
     } catch (error) {
       console.error('Error during sign up:', error);
       return false;
@@ -38,3 +38,4 @@ export class AuthService {
     return this.isAuthenticatedFlag;
   }
 }
+  

@@ -14,6 +14,7 @@ import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './signup/auth.service';
+import { RecaptchaModule } from 'ng-recaptcha';
 
 const routes: Routes = [
   {path: 'post-list', component: PostListComponent},
@@ -44,7 +45,9 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    //for captcha 
+    RecaptchaModule
   ],
   exports: [RouterModule],
   providers: [AuthGuard, AuthService],
