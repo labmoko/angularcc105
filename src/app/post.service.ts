@@ -41,4 +41,5 @@ export class PostService{
         this.listsOfPosts = listsOfPosts;
         this.listChangeEvent.emit(listsOfPosts);
       }
+      
 }

@@ -1,0 +1,61 @@
+<!--<section class="vh-100 bg-image"
+  style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>-->
+<!-- signup.component.html -->
+
+<!-- signup.component.html -->
+
+<form [formGroup]="formGroup" (ngSubmit)="signUp()">
+  <div class="form-outline mb-4">
+    <input type="text" id="firstname" class="form-control form-control-lg" formControlName="firstname" required />
+    <label class="form-label" for="firstname">First Name</label>
+  </div>
+
+  <div class="form-outline mb-4">
+    <input type="text" id="lastname" class="form-control form-control-lg" formControlName="lastname" required />
+    <label class="form-label" for="lastname">Last Name</label>
+  </div>
+
+  <div class="form-outline mb-4">
+    <input type="email" id="email" class="form-control form-control-lg" formControlName="email" required />
+    <label class="form-label" for="email">Email</label>
+  </div>
+
+  <div class="form-outline mb-4">
+    <input type="password" id="password" class="form-control form-control-lg" formControlName="password" required />
+    <label class="form-label" for="password">Password</label>
+    <!-- Display password criteria message -->
+    <div *ngIf="formGroup.get('password')?.hasError('passwordCriteria')" class="text-danger">
+      Please input a password that meets the criteria (lowercase, uppercase, number, and special characters).
+    </div>
+  </div>
+
+  <div class="form-check d-flex justify-content-center mb-5">
+    <input class="form-check-input me-2" type="checkbox" id="agreeTerms" formControlName="agreeTerms" />
+    <label class="form-check-label" for="agreeTerms">
+      I agree to the terms of service
+    </label>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+  </div>
+
+  <p *ngIf="errorMessage" class="text-center text-danger mt-3">{{ errorMessage }}</p>
+</form>
+
+
+
+            <!--</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>-->

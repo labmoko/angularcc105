@@ -1,0 +1,27 @@
+<!-- Add this to the head of your HTML file -->
+<script src="https://www.google.com/recaptcha/api.js"></script>
+
+<form (ngSubmit)="signIn()">
+  <!--email-->
+  <div class="form-outline mb-4">
+    <input type="text" id="email" class="form-control form-control-lg" [(ngModel)]="signInData.email" name="email" required />
+    <label class="form-label" for="form3Example3cg"> Email</label>
+  </div>
+
+  <div class="form-outline mb-4">
+    <input type="password" id="password" class="form-control form-control-lg" [(ngModel)]="signInData.password" name="password" required />
+    <label class="form-label" for="form3Example4cdg">Password</label>
+  </div>
+
+  <!-- reCAPTCHA -->
+  <re-captcha (resolved)="resolved($event)" siteKey="6LcZVS8pAAAAAMAZq21eN4X5Iky70otgENzUUffh"></re-captcha>
+
+  <div class="d-flex justify-content-center">
+    <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Sign In</button>
+  </div>
+
+  <p *ngIf="errorMessage" class="text-center text-success mt-5 mb-0">{{errorMessage}} <a routerLink="/signup" class="fw-bold text-body"><u>Sign up here</u></a></p>
+</form>
+
+
+<p *ngIf="errorMessage" class="text-center text-success mt-5 mb-0">{{errorMessage}} <a routerLink="/signup" class="fw-bold text-body"><u>Sign up here</u></a></p>

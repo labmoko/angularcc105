@@ -4,6 +4,7 @@ import { PostService } from '../post.service';
 import { Post } from '../post.model';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { BackendService } from '../backend.service'; /**11/8 dinagdag  */
+import { ReactiveFormsModule } from '@angular/forms'; /** dinagdag 12/10 */
 @Component({
   selector: 'app-post-edit',
   templateUrl: './post-edit.component.html',
@@ -24,7 +25,7 @@ export class PostEditComponent {
          let editTitle = "";
          let editDescription = "";
          let editImgPath = "";
-         let editVideoUrl = "";
+      //   let editVideoUrl = "";
 
           this.actRoute.params.subscribe((params: Params) => {
             if(params ['index']){
@@ -35,7 +36,7 @@ export class PostEditComponent {
 
               editTitle = post.title;
               editImgPath = post.imgPath;
-               editVideoUrl = post.videoUrl; // add this line
+            //   editVideoUrl = post.videoUrl; 
               editDescription = post.description;
 
               this.editMode= true;
@@ -46,7 +47,7 @@ export class PostEditComponent {
           this.form = new FormGroup({
             title: new FormControl(editTitle, [Validators.required]),
             imgPath: new FormControl(editImgPath, [Validators.required]),
-            videoUrl: new FormControl(editVideoUrl, [Validators.required]),
+           /* videoUrl: new FormControl(editVideoUrl), */
             description: new FormControl(editDescription, [Validators.required])
           })
         }
@@ -76,6 +77,8 @@ export class PostEditComponent {
 
           this.route.navigate(['post-list']);
         }*/
+        
+      
         onSubmit(){
           const title = this.form.value.title;
           const imgPath = this.form.value.imgPath;
