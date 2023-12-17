@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "maryanne:build:production"
+              "buildTarget": "maryanne:build:production"
             },
             "development": {
-              "browserTarget": "maryanne:build:development"
+              "buildTarget": "maryanne:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "maryanne:build"
+            "buildTarget": "maryanne:build"
           }
         },
         "test": {
