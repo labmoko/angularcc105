@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import{HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
@@ -15,6 +14,14 @@ import { SignupComponent } from './signup/signup.component';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './signup/auth.service';
 import { RecaptchaModule } from 'ng-recaptcha';
+//12/15
+//import { AngularFireModule } from '@angular/fire';
+//import { AngularFireDatabaseModule } from '@angular/fire/database';
+
+//12/15
+const firebaseConfig = {
+  
+}
 
 const routes: Routes = [
   {path: 'post-list', component: PostListComponent},
